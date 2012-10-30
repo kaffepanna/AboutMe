@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title It's all about ME!
+    = stylesheet_link_tag params[:controller]
+    = javascript_link_tag params[:controller]
+    = csrf_meta_tags
+  %body
+    .page
+      %header#page_header
+        %h1 All about ME!
+          %span my egocentric page
+      #page_content
+        = yield
