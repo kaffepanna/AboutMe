@@ -7,6 +7,77 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require reset
  *= require_self
  */
+
+body {
+  font-family: helvetica;
+  font-size: 0.8em;
+}
+
+br.clear {
+  clear: both;
+  display: hidden;
+}
+
+h1,h2,h3,h4,p,header { margin-bottom: 0.3em; }
+h1 { font-size: 150%; }
+h2 { font-size: 115%; }
+h3 { font-size: 110%; }
+h4 { font-size: 105%; }
+
+a, a:visited, a:active {
+  color: #000;
+}
+
+.page {
+  width: 40%;
+  min-height: 200px;
+  min-width: 800px;
+  margin: auto;
+  margin-top: 1.5em;
+}
+
+
+header#page_header {
+  span {
+    h1 {
+      font-size: 300%;
+      margin-bottom: 0px;
+    }
+    display: block;
+    margin-bottom: 1.5em;
+  }
+  margin-bottom: 2.0em;
+}
+
+nav#page_menu {
+  ul {
+    display: block;
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 0;
+    li { 
+      display: block;
+      float: left;
+    }
+    a, a:active, a:visited {
+      color: #000;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.5em 0.6em;
+      width: 6em;
+      display: block;
+      margin-left: 0.5em;
+    }
+    
+    a:hover, a.selected {
+      color: #FFF;
+      background-color: #000;
+    }
+  }
+}

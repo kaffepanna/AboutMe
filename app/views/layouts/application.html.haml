@@ -8,8 +8,17 @@
   %body
     .page
       %header#page_header
-        %h1 All about ME!
-        %span my egocentric page
+        %span
+          %h1 All about ME
+          %em my egocentric page
+          
+        %nav#page_menu
+          %ul
+            %li=menu_link 'Welcome', root_path
+            %li=menu_link 'Posts', '#'
+            %li=menu_link 'Pictures', '#'
+          %br.clear
+
       #page_content
         = yield
 
