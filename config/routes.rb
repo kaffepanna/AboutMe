@@ -1,4 +1,6 @@
 AboutMe::Application.routes.draw do
+  resources :images
+
   get "welcome/index"
   root to: "welcome#index"
   # The priority is based upon order of creation:
