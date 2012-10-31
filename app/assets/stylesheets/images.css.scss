@@ -9,6 +9,18 @@ figure {
   display: block;
   margin: 10px;
   float: left;
+  figcaption {
+    text-align: center;
+  }
+}
+
+figure.full {
+  float: none;
+  img {
+    margin: auto;
+    display: block;
+    max-width: 640px;
+  }
 }
 
 
