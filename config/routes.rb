@@ -1,5 +1,10 @@
 AboutMe::Application.routes.draw do
-  resources :images
+  resources :images do
+    member do
+      get 'thumb', format: :png
+      get 'original', format: :png
+    end
+  end
 
   get "welcome/index"
   root to: "welcome#index"

@@ -2,8 +2,22 @@ class ImagesController < ApplicationController
   def index
     @images = Image.find :all
     respond_to do | format|
-      format.html { render text: "<h1>Images</h1>", layout: true }
+      format.html 
       format.json { render json: @images }
+    end
+  end
+
+  def thumb
+    @image = Image.select('images.thumb_data').find(params[:id])
+    respond_to do |format|
+      format.png { send_data @image.thumb_data, type: :png, disposition: 'inline' }
+    end
+  end
+
+  def original
+    @image = Image.select('images.original_data').find(params[:id])
+    respond_to do |format|
+      format.png { send_data @image.original_data, type: :png, disposition: 'inline' }
     end
   end
 

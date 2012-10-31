@@ -1,0 +1,17 @@
+%h1 Create new image
+%p Select and upload a new image.
+
+=form_for(@image) do |f|
+  %h2 New image
+  =f.label :caption do
+    Caption
+    %span.small Short description
+  =f.text_field :caption
+  %br.clear
+  =f.label :image_file do
+    Image file
+    %span.small Select a file
+  =f.file_field :image_file, accept: "image/png,image/tiff,image/jpeg"
+  %br.clear
+  =f.submit 
+  %br.clear
