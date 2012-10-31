@@ -21,6 +21,20 @@ class ImagesController < ApplicationController
     end
   end
 
+  def rotate
+    @image = Image.select('*').find(params[:id])
+    @image.rotate!
+    respond_to do |format|
+      if @image.save
+        format.html {  redirect_to @image, notice: 'Image rotated' }
+        format.json { render json: @image, status: :rotated, location: @image }
+      else
+        format.html {  redirect_to @image, notice: 'Error rotating image' }
+        format.json { render json: @image.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def show
     @image = Image.find(params[:id])
 

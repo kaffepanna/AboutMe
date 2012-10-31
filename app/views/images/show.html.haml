@@ -2,3 +2,4 @@
   =image_tag(original_image_path(@image))
   %figcaption=@image.caption
 =link_to 'delete', @image, confirm: 'Are you sure?', method: :delete
+=link_to 'rotate', rotate_image_path(@image)

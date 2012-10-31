@@ -3,6 +3,7 @@ AboutMe::Application.routes.draw do
     member do
       get 'thumb', format: :png
       get 'original', format: :png
+      get 'rotate'
     end
   end
 

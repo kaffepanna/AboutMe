@@ -6,7 +6,8 @@ class ActiveRecord::ConnectionAdapters::AbstractAdapter
       v = v.truncate(20) if v.is_a? String and v.size > 20
       [k,v]
     }
-    log_without_trunkate(sql, name, b, &block)
+    s = sql.size > 50 ? sql.truncate(50) : sql
+    log_without_trunkate(s, name, b, &block)
   end
 
   alias_method_chain :log, :trunkate
