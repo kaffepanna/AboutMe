@@ -13,6 +13,8 @@ class Image < ActiveRecord::Base
 
   after_save :assign_tags
 
+  validates_presence_of :caption, :tag_names, :original_data, :thumb_data
+
   def tag_names
     @tag_names ||= tags.map(&:name).join(' ')
   end

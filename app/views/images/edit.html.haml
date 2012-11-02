@@ -1,7 +1,12 @@
+-content_for :sub_menu do
+  %ul
+    %li=link_to 'Back', @image
+
 %h1 Edit image
 
 %center
   =image_tag thumb_image_path(@image)
+  =link_to 'Rotate', rotate_image_path(@image)
 
 =form_for(@image) do |f|
   %h2 Edit

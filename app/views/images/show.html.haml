@@ -1,8 +1,8 @@
 -content_for :sub_menu do
   %ul
     %li=link_to 'Edit', edit_image_path(@image)
-    %li=link_to 'Rotate', rotate_image_path(@image)
     %li=link_to 'Delete', @image, confirm: 'Are you sure?', method: :delete
+    %li=link_to 'Back', images_path
 
 
 %figure.full

@@ -1,4 +1,4 @@
 %figure
   =link_to image_path(image) do
-    =image_tag(thumb_image_path(image))
+    =image_tag(thumb_image_path(image), alt: image.caption)
   %figcaption=image.caption
