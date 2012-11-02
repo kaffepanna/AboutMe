@@ -1,4 +1,6 @@
 AboutMe::Application.routes.draw do
+  resources :tags
+
   resources :images do
     member do
       get 'thumb', format: :png

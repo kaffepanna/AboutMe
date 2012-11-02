@@ -18,8 +18,10 @@
             %li=menu_link 'Welcome', root_path
             %li=menu_link 'Posts', '#'
             %li=menu_link 'Images', images_path
+            %li=menu_link 'Tags', tags_path
           %br.clear
-
+        .notice
+          =flash[:notice]
       #page_content
         = yield
 

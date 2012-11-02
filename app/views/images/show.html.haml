@@ -1,7 +1,10 @@
 %figure.full
   =image_tag(original_image_path(@image))
   %figcaption=@image.caption
-%span
+.tags
+  -@image.tags.each do |tag|
+    =link_to tag.name, tag
+.controls
   =link_to 'delete', @image, confirm: 'Are you sure?', method: :delete
   |
   =link_to 'rotate', rotate_image_path(@image)

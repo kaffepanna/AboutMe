@@ -13,5 +13,9 @@
     %span.small Select a file
   =f.file_field :image_file, accept: "image/png,image/tiff,image/jpeg"
   %br.clear
+  =f.label :tag_names do
+    Tags
+    %span.small Tags separated by space
+  =f.text_field :tag_names
   =f.submit 
   %br.clear
