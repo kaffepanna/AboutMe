@@ -1,5 +1,10 @@
 %figure.full
   =image_tag(original_image_path(@image))
   %figcaption=@image.caption
-=link_to 'delete', @image, confirm: 'Are you sure?', method: :delete
-=link_to 'rotate', rotate_image_path(@image)
+%span
+  =link_to 'delete', @image, confirm: 'Are you sure?', method: :delete
+  |
+  =link_to 'rotate', rotate_image_path(@image)
+  |
+  =link_to 'Back', images_path
+  

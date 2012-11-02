@@ -1,4 +1,4 @@
 %figure
-  =link_to image_path(image), type: :png do
+  =link_to image_path(image) do
     =image_tag(thumb_image_path(image))
   %figcaption=image.caption

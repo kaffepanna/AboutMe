@@ -18,7 +18,6 @@ body {
 
 br.clear {
   clear: both;
-  display: hidden;
 }
 
 h1,h2,h3,h4,p,header { margin-bottom: 0.5em; }
@@ -67,7 +66,7 @@ a, a:visited, a:active {
 
 
 header#page_header {
-  span {
+  div {
     h1 {
       font-size: 300%;
       margin-bottom: 0px;
