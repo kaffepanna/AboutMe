@@ -1,7 +1,10 @@
-%h1 Create new image
+%h1 Edit image
+
+%center
+  =image_tag thumb_image_path(@image)
 
 =form_for(@image) do |f|
-  %h2 New image
+  %h2 Edit
   =f.label :caption do
     Caption
     %span.small Short description

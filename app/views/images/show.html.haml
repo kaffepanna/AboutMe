@@ -1,3 +1,10 @@
+-content_for :sub_menu do
+  %ul
+    %li=link_to 'Edit', edit_image_path(@image)
+    %li=link_to 'Rotate', rotate_image_path(@image)
+    %li=link_to 'Delete', @image, confirm: 'Are you sure?', method: :delete
+
+
 %figure.full
   =image_tag(original_image_path(@image))
   %figcaption=@image.caption
@@ -5,9 +12,4 @@
   -@image.tags.each do |tag|
     =link_to tag.name, tag
 .controls
-  =link_to 'delete', @image, confirm: 'Are you sure?', method: :delete
-  |
-  =link_to 'rotate', rotate_image_path(@image)
-  |
-  =link_to 'Back', images_path
-  
+   

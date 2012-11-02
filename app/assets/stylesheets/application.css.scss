@@ -32,6 +32,7 @@ form {
   margin-top: 0.4em;
   padding: 10px;
   border: 1px solid lightgrey;
+  background-color: beige;
   label { 
     display: block; 
     font-weight: bold;
@@ -105,4 +106,30 @@ nav#page_menu {
       background-color: #000;
     }
   }
+}
+
+nav#sub_menu {
+  ul {
+    display: block;
+    float: right;
+    width: 100%;
+    list-style-type: none;
+    li { 
+      display: block;
+      float: right;
+    }
+    a {
+      padding: 0.2em 0.3em;
+      display: block;
+    }
+  }
+}
+
+div.notice {
+  background-color: beige;
+  border: 1px solid lightgray;
+  color: green;
+  padding: 0.5em;
+  padding-left: 0.9em;
+  margin: 0.5em;
 }

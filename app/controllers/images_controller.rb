@@ -26,10 +26,10 @@ class ImagesController < ApplicationController
     @image.rotate!
     respond_to do |format|
       if @image.save
-        format.html {  redirect_to @image, notice: 'Image rotated' }
+        format.html {  redirect_to :back, notice: 'Image rotated' }
         format.json { render json: @image, status: :rotated, location: @image }
       else
-        format.html {  redirect_to @image, notice: 'Error rotating image' }
+        format.html {  redirect_to @image, error: 'Error rotating image' }
         format.json { render json: @image.errors, status: :unprocessable_entity }
       end
     end
@@ -74,7 +74,7 @@ class ImagesController < ApplicationController
   def update
     @image = Image.find(params[:id])
     respond_to do |format|
-      if @best.update_attributes(params[:image])
+      if @image.update_attributes(params[:image])
         format.html { redirect_to @image, notice: 'Image updated' }
         format.json { head :no_content }
       else
@@ -89,7 +89,7 @@ class ImagesController < ApplicationController
     @image.destroy
 
     respond_to do |format|
-      format.html { redirect_to images_url }
+      format.html { redirect_to images_url, notice: 'Image removed' }
       format.json { head :no_content }
     end
   end

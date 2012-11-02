@@ -20,8 +20,11 @@
             %li=menu_link 'Images', images_path
             %li=menu_link 'Tags', tags_path
           %br.clear
-        .notice
-          =flash[:notice]
+        %nav#sub_menu
+          =yield(:sub_menu)
+          %br.clear
+        -if flash[:notice]
+          .notice=flash[:notice]
       #page_content
         = yield
 
