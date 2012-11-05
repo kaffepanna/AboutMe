@@ -58,6 +58,7 @@ form {
     border: 2px solid red;
   }
 }
+
 a, a:visited, a:active {
   color: #000;
 }
@@ -71,6 +72,9 @@ a, a:visited, a:active {
   margin-bottom: 10em;
 }
 
+.center {
+  text-align: center;
+}
 
 header#page_header {
   div {

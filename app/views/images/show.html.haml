@@ -8,8 +8,9 @@
 %figure.full
   =image_tag(original_image_path(@image))
   %figcaption=@image.caption
+%h3
 .tags
-  -@image.tags.each do |tag|
-    =link_to tag.name, tag
-.controls
+  %h2 Tags:
+  %span
+    =@image.tags.map {|tag| link_to(tag.name, tag) }.join(', ').html_safe
    

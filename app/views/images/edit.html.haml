@@ -4,8 +4,9 @@
 
 %h1 Edit image
 
-%center
+%div.center
   =image_tag thumb_image_path(@image)
+  %br
   =link_to 'Rotate', rotate_image_path(@image)
 
 =form_for(@image) do |f|
