@@ -100,21 +100,26 @@ nav#page_menu {
     li { 
       display: block;
       float: left;
+      a, a:active, a:visited {
+        color: #000;
+        text-align: center;
+        text-decoration: none;
+        padding: 0.5em 0.6em;
+        width: 6em;
+        display: block;
+        margin-left: 0.5em;
+      }
+    
+      a:hover, a.selected {
+        color: #FFF;
+        background-color: #000;
+      }
     }
-    a, a:active, a:visited {
-      color: #000;
-      text-align: center;
-      text-decoration: none;
-      padding: 0.5em 0.6em;
-      width: 6em;
-      display: block;
-      margin-left: 0.5em;
+
+    li.account {
+      float: right;
     }
     
-    a:hover, a.selected {
-      color: #FFF;
-      background-color: #000;
-    }
   }
 }
 

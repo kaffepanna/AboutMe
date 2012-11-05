@@ -19,6 +19,7 @@
             %li=menu_link 'Posts', '#'
             %li=menu_link 'Images', images_path
             %li=menu_link 'Tags', tags_path
+            %li.account=link_to 'Logout', user_sessions_path, method: :delete
           %br.clear
         %nav#sub_menu
           =yield(:sub_menu)
