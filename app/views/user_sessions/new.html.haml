@@ -1,0 +1,14 @@
+=form_for @user_session do |f|
+  %h2 Login information
+  =f.label :login do
+    E-mail
+    %span.small E-mail address
+  =f.text_field :login
+  %br.clear
+  =f.label :password do
+    Password
+    %span.small Your password
+  =f.password_field :password
+  %br.clear
+  =f.submit
+  %br.clear

@@ -1,5 +1,6 @@
 AboutMe::Application.routes.draw do
   resources :tags
+  resource :user_sessions
 
   resources :images do
     member do

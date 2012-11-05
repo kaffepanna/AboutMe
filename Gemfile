@@ -23,7 +23,7 @@ end
 gem 'free-image'
 gem 'haml-rails'
 gem 'jquery-rails'
-
+gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

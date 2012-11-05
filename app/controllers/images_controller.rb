@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  before_filter :require_user, except: [:index, :thumb, :original, :show]
   def index
     @images = Image.find :all
     respond_to do | format|
