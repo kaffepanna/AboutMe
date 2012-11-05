@@ -1,4 +1,3 @@
 %h1 Tags
 .tags_list
-  -@tags.each do |tag| 
-    =link_to tag.name, tag
+  =@tags.each.map {|tag| link_to tag.name, tag }.join(', ').html_safe
