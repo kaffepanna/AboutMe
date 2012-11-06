@@ -97,6 +97,11 @@ nav#page_menu {
     border-bottom: 1px solid black;
     margin: 0;
     padding: 0;
+
+    li.account {
+      float: right;
+    } 
+
     li { 
       display: block;
       float: left;
@@ -115,11 +120,6 @@ nav#page_menu {
         background-color: #000;
       }
     }
-
-    li.account {
-      float: right;
-    }
-    
   }
 }
 
