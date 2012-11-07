@@ -1,4 +1,6 @@
 AboutMe::Application.routes.draw do
+  resources :posts
+
   resources :tags
   resource :user_sessions
 

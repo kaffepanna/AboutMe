@@ -1,0 +1,10 @@
+=form_for @post do |f|
+  %h2 New post
+  =f.label :body do
+    Article Body
+    %span.small Markdown enabled
+  =f.text_area :body
+  %br.clear
+  =f.submit
+  %br.clear
+    

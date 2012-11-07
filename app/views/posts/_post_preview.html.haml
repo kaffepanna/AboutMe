@@ -1,0 +1,9 @@
+=link_to post do
+  %article
+    %header
+      %span.small
+        Published on 
+        %time=post.created_at
+    .content
+      :markdown
+        #{post.body.truncate 420, separator: ' '}
