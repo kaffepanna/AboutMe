@@ -1,1 +1,4 @@
+-content_for :sub_menu do
+  %ul
+    %li=link_to 'New', new_post_path
 =render partial: 'post_preview', collection: @posts, as: :post

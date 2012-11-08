@@ -1,9 +1,5 @@
-=link_to post do
-  %article
-    %header
-      %span.small
-        Published on 
-        %time=post.created_at
-    .content
-      :markdown
-        #{post.body.truncate 420, separator: ' '}
+%article
+  =post_body_preview(post).html_safe
+  %span.post_info
+    Published on 
+    %time=post.created_at

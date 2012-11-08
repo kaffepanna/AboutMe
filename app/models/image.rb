@@ -1,32 +1,19 @@
 require 'free-image'
 require 'stringio'
+require 'taggable'
 
 class Image < ActiveRecord::Base
-  has_many :taggings, dependent: :destroy
-  has_many :tags, through: :taggings
-
+  include ::Taggable
   default_scope select('images.id, images.caption')
 
-  attr_accessible :caption, :image_file, :tag_names
+  attr_accessible :caption, :image_files
   attr_protected :original_data, :thumb_data
-  attr_accessor :tag_names
 
-  after_save :assign_tags
 
-  validates_presence_of :caption, :tag_names 
+  validates_presence_of :caption 
   validates :original_data, presence: true, on: :create
   validates :thumb_data, presence: true, on: :create
   #validates :image_file, presence: true, on: :create
-
-  def tag_names
-    @tag_names ||= tags.map(&:name).join(' ')
-  end
-
-  def assign_tags
-    self.tags = self.tag_names.split(/\s+/).map do |name|
-      Tag.find_or_create_by_name(name)
-    end
-  end
 
   def image_file=(file)
     original_string = StringIO.new("")

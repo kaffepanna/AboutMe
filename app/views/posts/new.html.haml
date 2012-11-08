@@ -5,6 +5,11 @@
     %span.small Markdown enabled
   =f.text_area :body
   %br.clear
+  =f.label :tag_names do
+    Tags
+    %span.small Tags separated by space
+  =f.text_field :tag_names
+  %br.clear
   =f.submit
   %br.clear
     

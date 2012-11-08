@@ -25,3 +25,16 @@ form {
   }
 }
 
+article {
+  margin-bottom: 1.5em;
+  .post_info {
+    display: block;
+    font-size: 80%;
+  }
+  .post_title {
+  }
+  p {
+    clear: both;
+  }
+}
+
