@@ -1,5 +1,14 @@
-%h1 Welcome
-%p
-  Hello and welcome to the page that I have dedicated to my own narcissim.
-%p
-  On this page is intended to work as my own diary, log or blog.
+%h1 Latest
+-@items.each do |item|
+  -case item
+  -when Image then
+    -if @last == :image
+      =render item
+    -else
+      = render partial: "images/image_full", object: item, as: :image
+    -@last = :image
+  -when Post then
+    %br.clear
+    = render partial: "posts/post_preview", object: item, as: :post
+    -@last = :post
+

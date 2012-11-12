@@ -4,7 +4,7 @@ require 'taggable'
 
 class Image < ActiveRecord::Base
   include ::Taggable
-  default_scope select('images.id, images.caption')
+  default_scope order('created_at DESC')
 
   attr_accessible :caption, :image_files
   attr_protected :original_data, :thumb_data

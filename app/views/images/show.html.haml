@@ -5,9 +5,7 @@
     %li=link_to 'Back', images_path
 
 
-%figure.full
-  =image_tag(original_image_path(@image))
-  %figcaption=@image.caption
+=render partial: 'image_full', object: @image, as: :image
 %h3
 .tags
   %h2 Tags:

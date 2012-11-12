@@ -1,0 +1,5 @@
+%article
+  =markdown(@post).html_safe
+  %span.post_info
+    Published on
+    %time=@post.created_at
