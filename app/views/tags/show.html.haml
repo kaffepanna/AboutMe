@@ -1,4 +1,8 @@
-%h1=@tag.name
+%h1 Selected Tag: #{@tag.name}
+.posts
+  %h2 Posts
+  =render partial: 'posts/post_preview', collection: @tag.posts, as: :post
 .images
   %h2 Images
   =render @tag.images
+
