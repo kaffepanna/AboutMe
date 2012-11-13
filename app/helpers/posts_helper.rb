@@ -1,11 +1,14 @@
 module PostsHelper
   def post_body_preview post 
-    html = markdown(post)
-    html.truncate(600, separator: "</p>")
+    html = markdown(post, true)
   end
 
-  def markdown(post)
-    html = RDiscount.new(post.body).to_html
+  def markdown(post, trunkate=false)
+    if trunkate
+      html = RDiscount.new(post.body.truncate(600)).to_html
+    else
+      html = RDiscount.new(post.body).to_html
+    end
     html =html.sub(/^<h1>(.+)<\/h1>/m) {
       render partial: 'posts/post_header', locals: { 
                     title: $1,
