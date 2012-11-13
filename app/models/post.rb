@@ -7,12 +7,8 @@ class Post < ActiveRecord::Base
   validate :starts_with_heading
 
   def starts_with_heading
-    begin
-      markdown(self)
-      return true
-    rescue
+    unless RDiscount.new(self.body).to_html.lines.first =~ /^<h1>/
       errors.add(:body, "Needs to start with <h1>")
-      return false
     end
   end
 end
