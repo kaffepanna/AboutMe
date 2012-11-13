@@ -24,8 +24,10 @@ class Image < ActiveRecord::Base
         thumb.save(thumb_io, :png)
       end
 
-      original_io = FreeImage::IO.new(original_string)
-      image.save(original_io, :png)
+      image.make_thumbnail 640 do |i|
+        original_io = FreeImage::IO.new(original_string)
+        i.save(original_io, :png)
+      end
     end
 
     self.original_data = original_string.string
