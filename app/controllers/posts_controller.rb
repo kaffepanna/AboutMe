@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.new
+    @post = Post.find params[:id]
     respond_to do |format|
       format.html
       format.json { render json: @post }
